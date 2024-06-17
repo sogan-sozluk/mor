@@ -1,0 +1,170 @@
+$bg-color: #2c272e;
+$green: #6ea200;
+$white: #cccccc;
+$secondary-white: #919191;
+
+$black: #181a1b;
+$grey: #868686;
+$light-grey: #e4e2de;
+$dark-purple-200: #301a3a;
+$dark-purple-100: #472756;
+$purple: #64387a;
+$light-purple: #a572be;
+
+@font-face {
+	font-family: 'Karla';
+	src: url('/fonts/Karla.ttf');
+}
+
+* {
+	text-transform: lowercase;
+	font-family: 'Karla', sans-serif;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-size: 16px;
+	background-color: $black;
+	color: $light-grey;
+}
+
+@media (max-width: 768px) {
+	html,
+	body {
+		font-size: 14px;
+	}
+}
+
+body {
+	min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $light-grey;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: $light-purple;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+button {
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 0.25rem;
+	background-color: $dark-purple-200;
+	color: $light-grey;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $light-purple;
+	}
+}
+
+input {
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 0.25rem;
+	background-color: $light-grey;
+	color: $black;
+
+	::placeholder {
+		color: $grey;
+	}
+
+	&:focus {
+		outline: 1px solid $light-purple;
+	}
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+li {
+	padding: 0;
+	margin: 0;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.h-full {
+	height: 100%;
+}
+
+.flex {
+	display: flex;
+}
+
+.row {
+	display: flex;
+}
+
+.col {
+	display: flex;
+	flex-direction: column;
+}
+
+.align-center {
+	display: flex;
+	align-items: center;
+}
+
+.justify-center {
+	display: flex;
+	justify-content: center;
+}
+
+.justify-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.justify-around {
+	display: flex;
+	justify-content: space-around;
+}
+
+.center-items {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fit-content {
+	width: fit-content;
+}
+
+.gap-1 {
+	gap: 1rem;
+}
+.gap-05 {
+	gap: 0.5rem;
+}
+
+.gap-025 {
+	gap: 0.25rem;
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="193.5265mm"
+   height="39.166504mm"
+   viewBox="0 0 193.5265 39.166504"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <rect
+       x="1069.5054"
+       y="730.89166"
+       width="714.26331"
+       height="290.99615"
+       id="rect51" />
+  </defs>
+  <g
+     id="layer1"
+     style="display:inline"
+     transform="translate(-249.74871,-143.21386)">
+    <g
+       id="g15">
+      <g
+         id="g13"
+         transform="matrix(0.65257517,0,0,0.65257517,110.10916,60.921739)">
+        <circle
+           style="fill:#6f1399;fill-opacity:1;stroke:#e4e2de;stroke-width:3;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="path8-2"
+           cx="133.39656"
+           cy="-261.85837"
+           r="23.580849"
+           transform="rotate(96.233262)" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#e4e2de;stroke-width:3;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           d="m 270.40186,185.74963 c 1.41,-8.51382 -0.6443,-17.55018 -5.5965,-24.61764 -4.9522,-7.06746 -12.74433,-12.08329 -21.22801,-13.66457 -6.35214,-1.18398 -13.04543,-0.47193 -19.00631,2.02194"
+           id="path49-9"
+           transform="translate(-9.088728,-7.0528227)" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#e4e2de;stroke-width:3;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           d="m 270.13228,186.42362 c -8.49896,-1.66258 -16.29027,-6.69728 -21.298,-13.76263 -5.00772,-7.06535 -7.17739,-16.08451 -5.93091,-24.65439 0.68008,-4.67573 2.34425,-9.20597 4.85267,-13.21006"
+           id="path50-1"
+           transform="translate(-9.3688424,-7.1928798)" />
+      </g>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,9.2448576,-55.821251)"
+         id="text50"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:96px;line-height:2.4;font-family:Karla;-inkscape-font-specification:'Karla, @wght=800';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 800;letter-spacing:-5.35px;word-spacing:5.09px;white-space:pre;shape-inside:url(#rect51);shape-padding:2.2675;display:inline;fill:#6f1399;fill-opacity:1;stroke:none;stroke-width:11.3386;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><tspan
+           x="1071.7734"
+           y="875.66555"
+           id="tspan2"><tspan
+             dx="0 0 0 0 0 -5.0900064 5.0899901"
+             style="fill:#e4e2de"
+             id="tspan1">soğan sözlük</tspan></tspan></text>
+    </g>
+  </g>
+</svg>
