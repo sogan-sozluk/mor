@@ -66,11 +66,12 @@ a:hover {
 }
 
 button {
-	padding: 0;
+	padding: 0 1rem;
 	margin: 0;
 	border: none;
 	border-radius: 0.25rem;
 	background-color: $dark-purple-200;
+	border: 1px solid $light-grey;
 	color: $light-grey;
 	cursor: pointer;
 
@@ -79,8 +80,9 @@ button {
 	}
 }
 
-input {
-	padding: 0;
+input,
+textarea {
+	padding: 0 0.5rem;
 	margin: 0;
 	border: none;
 	border-radius: 0.25rem;

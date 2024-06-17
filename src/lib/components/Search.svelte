@@ -16,10 +16,6 @@
 		gap: 0.5rem;
 	}
 
-	input {
-		padding: 0 0.5rem;
-	}
-
 	button {
 		padding: 0 1rem;
 		height: calc(2rem - 2px);
