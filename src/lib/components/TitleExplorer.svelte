@@ -83,6 +83,8 @@
 		gap: 1.5rem;
 		.tabs {
 			button {
+				padding: 0;
+				border: none;
 				background-color: transparent;
 				color: $grey;
 				font-size: 1.25rem;

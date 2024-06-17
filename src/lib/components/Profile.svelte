@@ -1,12 +1,26 @@
 <script lang="ts">
 	import profileIcon from '$lib/images/icons/profile.svg';
+	import { onMount } from 'svelte';
+
+	let url = '/giris-yap';
+	let nickname: string | null;
+	onMount(() => {
+		nickname = localStorage.getItem('nickname');
+		if (nickname) {
+			url = `/yazar/${nickname}`;
+		}
+	});
 </script>
 
-<a class="profile row gap-05 center-items" href="/">
+<a class="profile row gap-05 center-items" href={url}>
 	<div class="ellipse center-items">
 		<img src={profileIcon} alt="profile" />
 	</div>
-	<p>kendim</p>
+	{#if nickname}
+		<p>Kendim</p>
+	{:else}
+		<p>Giriş Yap</p>
+	{/if}
 </a>
 
 <style lang="scss">
