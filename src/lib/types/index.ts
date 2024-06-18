@@ -4,3 +4,4 @@ export * from './Author';
 export * from './Entry';
 export * from './ErrorResponse';
 export * from './LoginResponse';
+export * from './SearchResult';
