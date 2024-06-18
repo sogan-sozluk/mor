@@ -1,10 +1,11 @@
-import type { EntryAuthor } from './EntryAuthor';
+import type { Author } from './Author';
+import type { Title } from './Title';
 
 export type Entry = {
 	id: number;
-	title: string;
+	title: Title;
 	content: string;
-	author: EntryAuthor;
+	author: Author;
 	createdAt: string;
 	updatedAt: string;
 };
