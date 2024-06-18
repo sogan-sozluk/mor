@@ -1,6 +1,7 @@
 <script lang="ts">
 	import * as env from '$env/static/public';
 	import type { ErrorResponse, LoginResponse } from '$lib/types';
+	import { nicknameStore } from '$lib/stores/user';
 
 	let nickname: string;
 	let password: string;
@@ -14,7 +15,7 @@
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				nickname,
+				nickname: nickname,
 				password
 			})
 		});
@@ -22,7 +23,7 @@
 		if (response.ok) {
 			const loginResponse: LoginResponse = await response.json();
 			localStorage.setItem('token', loginResponse.token);
-			localStorage.setItem('nickname', nickname);
+			nicknameStore.set(nickname);
 			location.href = '/';
 		} else {
 			failed = true;

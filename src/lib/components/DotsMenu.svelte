@@ -21,7 +21,7 @@
 
 <style lang="scss">
 	button {
-		outline: none;
+		border: none;
 		background: none;
 		cursor: pointer;
 		height: 2rem;

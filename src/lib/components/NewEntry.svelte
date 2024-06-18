@@ -9,7 +9,6 @@
 	const handleSubmit = async () => {
 		const response = await fetch(`${env.PUBLIC_API_URL}/entries`, {
 			method: 'POST',
-			// set content type to json and authenticate the request
 			headers: {
 				'Content-Type': 'application/json',
 				Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -23,6 +22,8 @@
 		if (response.ok) {
 			entryContent = '';
 		}
+
+		location.reload();
 	};
 
 	onMount(() => {
