@@ -7,7 +7,7 @@
 
 <div class="entry-item col gap-1 w-full">
 	{#if showTitle}
-		<a href="/baslik/{entry.title}" class="title">{entry.title}</a>
+		<a href="/baslik/{entry.title.name}" class="title">{entry.title.name}</a>
 	{/if}
 	<div class="content">
 		{entry.content}
