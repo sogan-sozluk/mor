@@ -1,15 +1,10 @@
 <script lang="ts">
 	import profileIcon from '$lib/images/icons/profile.svg';
-	import { onMount } from 'svelte';
+	import { nicknameStore } from '$lib/stores/user';
 
 	let url = '/giris-yap';
-	let nickname: string | null;
-	onMount(() => {
-		nickname = localStorage.getItem('nickname');
-		if (nickname) {
-			url = `/yazar/${nickname}`;
-		}
-	});
+	$: nickname = $nicknameStore;
+	$: url = nickname ? `/yazar/${nickname}` : '/giris-yap';
 </script>
 
 <a class="profile row gap-05 center-items" href={url}>
