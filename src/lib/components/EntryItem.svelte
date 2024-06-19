@@ -42,7 +42,7 @@
 			<a href="/yazar/{entry.author.nickname}">{entry.author.nickname}</a>
 		</div>
 		<div class="date">
-			<p>{entry.createdAt} ~ {entry.updatedAt}</p>
+			<a class="link" href="/girdi/{entry.id}">{entry.createdAt} ~ {entry.updatedAt}</a>
 		</div>
 	</div>
 </div>
@@ -82,7 +82,7 @@
 		font-size: 0.875rem;
 	}
 
-	.date {
+	.date .link {
 		color: $grey;
 		font-size: 0.75rem;
 	}
