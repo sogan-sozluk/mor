@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="43.297909mm"
-   height="43.637936mm"
-   viewBox="0 0 43.297909 43.637936"
+   width="42.297894mm"
+   height="42.637901mm"
+   viewBox="0 0 42.297894 42.637901"
    version="1.1"
    id="svg1"
    xmlns="http://www.w3.org/2000/svg"
@@ -32,24 +32,22 @@
   <g
      id="layer1"
      style="display:inline"
-     transform="translate(-151.76602,-235.28393)">
-    <path
-       style="display:inline;fill:#919191;fill-opacity:1;stroke:#919191;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-dashoffset:27.7024;stroke-opacity:1;marker-end:url(#ArrowWide-3)"
-       d="m 173.41496,245.70195 v 20.96967"
-       id="path6-8" />
-    <ellipse
-       style="display:inline;fill:none;fill-opacity:1;stroke:#919191;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:27.7024;stroke-opacity:1"
-       id="path10-5"
-       cx="-173.41496"
-       cy="-257.10291"
-       rx="19.648947"
-       ry="19.818972"
-       transform="scale(-1)" />
-    <circle
-       style="fill:none;fill-opacity:1;stroke:#919191;stroke-width:4;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:27.7024;stroke-opacity:1"
-       id="path21"
-       cx="228.38142"
-       cy="320.71661"
-       r="42.237728" />
+     transform="translate(-8.8905561,-500.19737)">
+    <g
+       id="g6"
+       transform="translate(-143.37546,264.41343)">
+      <path
+         style="display:inline;fill:#919191;fill-opacity:1;stroke:#e4e2de;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:27.7024;stroke-opacity:1;marker-end:url(#ArrowWide-3)"
+         d="m 173.41496,245.93097 v 20.96967"
+         id="path6-8" />
+      <ellipse
+         style="display:inline;fill:none;fill-opacity:1;stroke:#e4e2de;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:27.7024;stroke-opacity:1"
+         id="path10-5"
+         cx="-173.41496"
+         cy="-257.10291"
+         rx="19.648947"
+         ry="19.818972"
+         transform="scale(-1)" />
+    </g>
   </g>
 </svg>
