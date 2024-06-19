@@ -1,13 +1,17 @@
 <script lang="ts">
-	import type { Entry } from '$lib/types';
-	import upvote from '$lib/images/icons/upvote.svg';
 	import downvote from '$lib/images/icons/downvote.svg';
 	import favorite from '$lib/images/icons/favorite.svg';
 	import unfavorite from '$lib/images/icons/unfavorite.svg';
+	import upvote from '$lib/images/icons/upvote.svg';
 	import { nicknameStore } from '$lib/stores/user';
+	import type { Entry } from '$lib/types';
+	import { formatDates } from '$lib/utils';
 
 	export let entry: Entry;
 	export let showTitle = true;
+
+	const dates = formatDates(entry.createdAt, entry.updatedAt);
+
 	$: isloggedIn = !!$nicknameStore;
 </script>
 
@@ -42,7 +46,7 @@
 			<a href="/yazar/{entry.author.nickname}">{entry.author.nickname}</a>
 		</div>
 		<div class="date">
-			<a class="link" href="/girdi/{entry.id}">{entry.createdAt} ~ {entry.updatedAt}</a>
+			<a class="link" href="/girdi/{entry.id}">{dates}</a>
 		</div>
 	</div>
 </div>
