@@ -3,6 +3,3 @@
 </script>
 
 <Login />
-
-<style lang="scss">
-</style>

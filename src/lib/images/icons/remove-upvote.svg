@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="42.297901mm"
+   width="42.297905mm"
    height="42.637932mm"
-   viewBox="0 0 42.297901 42.637932"
+   viewBox="0 0 42.297905 42.637932"
    version="1.1"
    id="svg1"
    xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +13,7 @@
      id="defs1">
     <marker
        style="overflow:visible"
-       id="ArrowWide-3-2"
+       id="ArrowWide-3-9-8"
        refX="0"
        refY="0"
        orient="auto-start-reverse"
@@ -26,29 +26,29 @@
          style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:butt"
          d="M 3,-3 0,0 3,3"
          transform="rotate(180,0.125,0)"
-         id="path9-9-6" />
+         id="path9-9-2-9" />
     </marker>
   </defs>
   <g
      id="layer1"
      style="display:inline"
-     transform="translate(-60.982409,-500.42641)">
+     transform="translate(-194.82539,-500.1797)">
     <g
-       id="g6-7"
-       transform="rotate(180,127.77316,389.30962)"
+       id="g6-0-8"
+       transform="matrix(1,0,0,-1,42.559373,778.60159)"
        style="display:inline">
-      <path
-         style="display:inline;fill:#919191;fill-opacity:1;stroke:#e4e2de;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:27.7024;stroke-opacity:1;marker-end:url(#ArrowWide-3-2)"
-         d="m 173.41496,245.70195 v 20.96967"
-         id="path6-8-9" />
       <ellipse
-         style="display:inline;fill:none;fill-opacity:1;stroke:#e4e2de;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:27.7024;stroke-opacity:1"
-         id="path10-5-2"
+         style="display:inline;fill:#e4e2de;fill-opacity:1;stroke:#e4e2de;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:27.7024;stroke-opacity:1"
+         id="path10-5-9-0"
          cx="-173.41496"
-         cy="-256.87387"
+         cy="-257.10291"
          rx="19.648947"
          ry="19.818972"
          transform="scale(-1)" />
+      <path
+         style="display:inline;fill:none;fill-opacity:1;stroke:#181a1b;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:27.7024;stroke-opacity:1;marker-end:url(#ArrowWide-3-9-8)"
+         d="m 173.41496,245.93097 v 20.96967"
+         id="path6-8-5-2" />
     </g>
   </g>
 </svg>
