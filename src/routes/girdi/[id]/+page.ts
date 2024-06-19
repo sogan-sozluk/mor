@@ -10,7 +10,7 @@ export async function load({ params, fetch }) {
 	const url = `${env.PUBLIC_API_URL}/entries/${params.id}`;
 	const token = get(tokenStore);
 	try {
-		const response = await fetchApi(fetch, new URL(url), token);
+		const response = await fetchApi(fetch, new URL(url), 'GET', token);
 
 		if (response.ok) {
 			const entry = await response.json();
