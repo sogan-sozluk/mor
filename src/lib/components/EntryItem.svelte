@@ -1,11 +1,12 @@
 <script lang="ts">
+	import * as env from '$env/static/public';
 	import downvote from '$lib/images/icons/downvote.svg';
 	import favorite from '$lib/images/icons/favorite.svg';
 	import unfavorite from '$lib/images/icons/unfavorite.svg';
 	import upvote from '$lib/images/icons/upvote.svg';
-	import { nicknameStore } from '$lib/stores/user';
+	import { nicknameStore, tokenStore } from '$lib/stores/user';
 	import type { Entry } from '$lib/types';
-	import { formatDates } from '$lib/utils';
+	import { fetchApi, formatDates } from '$lib/utils';
 
 	export let entry: Entry;
 	export let showTitle = true;
@@ -13,6 +14,22 @@
 	const dates = formatDates(entry.createdAt, entry.updatedAt);
 
 	$: isloggedIn = !!$nicknameStore;
+
+	const handleFavorite = async () => {
+		const url = `${env.PUBLIC_API_URL}/entries/${entry.id}/favorite`;
+		const res = await fetchApi(fetch, new URL(url), 'POST', $tokenStore);
+		if (res.ok) {
+			entry.isFavorite = true;
+		}
+	};
+
+	const handleUnfavorite = async () => {
+		const url = `${env.PUBLIC_API_URL}/entries/${entry.id}/unfavorite`;
+		const res = await fetchApi(fetch, new URL(url), 'POST', $tokenStore);
+		if (res.ok) {
+			entry.isFavorite = false;
+		}
+	};
 </script>
 
 <div class="entry-item col gap-1 w-full">
@@ -31,12 +48,12 @@
 				<img src={downvote} alt="Downvote" />
 			</button>
 			{#if entry.isFavorite}
-				<button class="unfavorite">
-					<img src={unfavorite} alt="Downvote" />
+				<button class="unfavorite" on:click={handleUnfavorite}>
+					<img src={unfavorite} alt="Unfavorite" />
 				</button>
 			{:else}
-				<button class="favorite">
-					<img src={favorite} alt="Downvote" />
+				<button class="favorite" on:click={handleFavorite}>
+					<img src={favorite} alt="Favorite" />
 				</button>
 			{/if}
 		</div>

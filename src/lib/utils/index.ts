@@ -1,9 +1,11 @@
 export const fetchApi = async (
 	fetch: (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>,
 	url: URL,
+	method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET',
 	token: string | null
 ): Promise<Response> => {
 	const response = await fetch(url.toString(), {
+		method,
 		headers: {
 			Authorization: `Bearer ${token}`
 		}
