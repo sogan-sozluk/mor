@@ -16,7 +16,6 @@ export const formatDates = (createdAt: string, updatedAt: string | null): string
 	const createdAtDate = new Date(createdAt);
 	const updatedAtDate = updatedAt ? new Date(updatedAt) : null;
 
-	// Format the createdAt date
 	const createdAtShort = createdAtDate.toLocaleString([], {
 		day: '2-digit',
 		month: '2-digit',
