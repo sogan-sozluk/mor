@@ -1,7 +1,7 @@
 import * as env from '$env/static/public';
 import { tokenStore } from '$lib/stores/user';
 import type { Entry, ErrorResponse } from '$lib/types';
-import { fetchApi } from '$lib/utils/index.js';
+import { fetchApi } from '$lib/utils';
 import { get } from 'svelte/store';
 
 export const prerender = false;
