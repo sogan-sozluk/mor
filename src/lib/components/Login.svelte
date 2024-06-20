@@ -3,31 +3,48 @@
 	import type { ErrorResponse, LoginResponse } from '$lib/types';
 	import { nicknameStore } from '$lib/stores/user';
 
-	let nickname: string;
-	let password: string;
-	let failed = false;
-	let error: ErrorResponse;
+	let nickname: string = '';
+	let password: string = '';
+	let error: ErrorResponse | null = null;
+	let isSubmitted = false;
+
+	const handleInput = () => {
+		if (isSubmitted && error) {
+			error = null;
+			isSubmitted = false;
+		}
+	};
 
 	const handleSubmit = async () => {
-		const response = await fetch(`${env.PUBLIC_API_URL}/auth/login`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				nickname: nickname,
-				password
-			})
-		});
+		try {
+			const response = await fetch(`${env.PUBLIC_API_URL}/auth/login`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					nickname: nickname,
+					password
+				})
+			});
 
-		if (response.ok) {
-			const loginResponse: LoginResponse = await response.json();
-			localStorage.setItem('token', loginResponse.token);
-			nicknameStore.set(nickname);
-			location.href = '/';
-		} else {
-			failed = true;
-			error = await response.json();
+			if (response.ok) {
+				const loginResponse: LoginResponse = await response.json();
+				localStorage.setItem('token', loginResponse.token);
+				nicknameStore.set(nickname);
+				location.href = '/';
+			} else {
+				const errorResponse: ErrorResponse = await response.json();
+				error = errorResponse;
+			}
+
+			isSubmitted = true;
+		} catch (e) {
+			console.error(e);
+			error = {
+				error: 'İstek başarısız oldu.',
+				details: 'Lütfen daha sonra tekrar deneyin.'
+			};
 		}
 	};
 </script>
@@ -39,20 +56,20 @@
 		class="nickname"
 		placeholder="Kullanıcı Adı"
 		bind:value={nickname}
-		class:failed
+		on:input={handleInput}
 	/>
 	<input
 		type="password"
 		class="password"
 		placeholder="Parola"
 		bind:value={password}
-		class:failed
+		on:input={handleInput}
 		on:keydown={(e) => e.key === 'Enter' && handleSubmit()}
 	/>
-	{#if failed && error}
+	{#if !!error}
 		<p class="error">{error.details}</p>
 	{/if}
-	<button on:click={handleSubmit}>Giriş Yap</button>
+	<button on:click={handleSubmit} disabled={!!error || !nickname || !password}>Giriş Yap</button>
 	<p>
 		Hesabın yok mu? <a href="/kayit-ol">Kayıt ol</a>
 	</p>

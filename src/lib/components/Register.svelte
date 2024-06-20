@@ -124,7 +124,7 @@
 		on:keydown={(e) => e.key === 'Enter' && handleSubmit()}
 		on:input={handleInput}
 	/>
-	{#if error}
+	{#if !!error}
 		<p class="error">{error.error} {error.details}</p>
 	{/if}
 	<button
