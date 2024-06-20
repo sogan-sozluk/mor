@@ -77,10 +77,11 @@ button {
 
 	&:hover {
 		background-color: $light-purple;
-	}
 
-	&:disabled {
-		background-color: $grey;
+		&:disabled {
+			background-color: $grey;
+			cursor: not-allowed;
+		}
 	}
 }
 
