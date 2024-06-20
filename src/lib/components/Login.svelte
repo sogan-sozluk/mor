@@ -53,6 +53,9 @@
 		<p class="error">{error.details}</p>
 	{/if}
 	<button on:click={handleSubmit}>Giriş Yap</button>
+	<p>
+		Hesabın yok mu? <a href="/kayit-ol">Kayıt ol</a>
+	</p>
 </div>
 
 <style lang="scss">

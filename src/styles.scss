@@ -78,6 +78,10 @@ button {
 	&:hover {
 		background-color: $light-purple;
 	}
+
+	&:disabled {
+		background-color: $grey;
+	}
 }
 
 input,
