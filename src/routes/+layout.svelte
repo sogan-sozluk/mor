@@ -8,8 +8,8 @@
 	import type { ExplorerData } from './+layout';
 
 	export let data: ExplorerData;
-	let todayTitles: TitleExplorerItem[] = data.todayTitles.data;
-	let trendTitles: TitleExplorerItem[] = data.trendsTitles.data;
+	let todayTitles: TitleExplorerItem[] = data.todayTitles.items;
+	let trendTitles: TitleExplorerItem[] = data.trendsTitles.items;
 </script>
 
 <svelte:head>

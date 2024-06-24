@@ -1,32 +1,55 @@
 import * as env from '$env/static/public';
-import type EntryItem from '$lib/components/EntryItem.svelte';
 import { tokenStore } from '$lib/stores/user.js';
-import type { Entry, PaginationResponse } from '$lib/types';
+import type { Entry, ErrorResponse, PaginationResponse } from '$lib/types';
 import { get } from 'svelte/store';
 
 export const prerender = false;
 export const csr = false;
 
-export async function load({ params, fetch }) {
-	const url = `${env.PUBLIC_API_URL}/titles/${params.title}/entries?page=0&perPage=10`;
-	const token = get(tokenStore);
-	const res = await fetch(url, {
-		headers: {
-			Authorization: `Bearer ${token}`
-		}
-	});
-	let entries: PaginationResponse<EntryItem> = { total: 0, page: 0, perPage: 0, data: [] };
-	if (res.ok) {
-		entries = await res.json();
-	}
+export async function load({ params, fetch, url }) {
+	try {
+		const page = url.searchParams.get('page') || '0';
+		const perPage = url.searchParams.get('perPage') || '10';
+		const fetchUrl = `${env.PUBLIC_API_URL}/titles/${params.title}/entries?page=${page}&perPage=${perPage}`;
 
-	return {
-		title: params.title,
-		entries: entries.data
-	};
+		const token = get(tokenStore);
+		const res = await fetch(fetchUrl, {
+			headers: {
+				Authorization: `Bearer ${token}`
+			}
+		});
+
+		if (res.ok) {
+			const entries: PaginationResponse<Entry> = await res.json();
+			return {
+				title: params.title,
+				entries
+			};
+		} else {
+			const error = await res.json();
+			return {
+				title: params.title,
+				entries: [],
+				error
+			};
+		}
+	} catch (e) {
+		console.error(e);
+		const error: ErrorResponse = {
+			error: 'İstek Hatası',
+			details: 'Girdiler yüklenirken bir hata oluştu.'
+		};
+
+		return {
+			title: params.title,
+			entries: [],
+			error
+		};
+	}
 }
 
 export type TitleData = {
 	title: string;
-	entries: Entry[];
+	entries: PaginationResponse<Entry>;
+	error?: ErrorResponse;
 };
