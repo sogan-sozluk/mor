@@ -1,12 +1,18 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import * as env from '$env/static/public';
+	import type { CreateEntryResponse } from '$lib/types';
 	import { onMount } from 'svelte';
+	import LoadingSpinner from './LoadingSpinner.svelte';
 
 	export let title: string;
 	let entryContent: string;
 	let nickname: string | null;
+	$: submitting = false;
 
 	const handleSubmit = async () => {
+		if (submitting) return;
+		submitting = true;
 		const response = await fetch(`${env.PUBLIC_API_URL}/entries`, {
 			method: 'POST',
 			headers: {
@@ -20,10 +26,12 @@
 		});
 
 		if (response.ok) {
+			const entry: CreateEntryResponse = await response.json();
 			entryContent = '';
+			goto(`/girdi/${entry.id}`);
 		}
 
-		location.reload();
+		submitting = false;
 	};
 
 	onMount(() => {
@@ -38,7 +46,11 @@
 		placeholder="Bu konuda bizi aydınlat..."
 		bind:value={entryContent}
 	></textarea>
-	<button on:click={handleSubmit}>Gönder</button>
+	{#if submitting}
+		<LoadingSpinner size="small" />
+	{:else}
+		<button on:click={handleSubmit}>Gönder</button>
+	{/if}
 </div>
 
 <style lang="scss">
