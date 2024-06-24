@@ -13,7 +13,7 @@
 
 	const dates = formatDates(entry.createdAt, entry.updatedAt);
 
-	$: isLoggedIn = $tokenStore !== null;
+	$: isLoggedIn = !!$tokenStore;
 
 	const handleFavorite = async () => {
 		const url = `${env.PUBLIC_API_URL}/entries/${entry.id}/favorite`;
