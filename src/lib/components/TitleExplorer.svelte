@@ -47,19 +47,23 @@
 	</div>
 	<ul class="titles col gap-1" class:hidden={isHidden}>
 		{#if activeTabIdx === 0}
-			{#each todayTitles as title}
-				<a href="/baslik/{title.name}">
-					<li class="title justify-between gap-05">
-						<p class="name">
-							{title.name}
-						</p>
-						<p class="entry-count">
-							{title.entryCount}
-						</p>
-					</li>
-				</a>
-			{/each}
-		{:else}
+			{#if todayTitles.length > 0}
+				{#each todayTitles as title}
+					<a href="/baslik/{title.name}">
+						<li class="title justify-between gap-05">
+							<p class="name">
+								{title.name}
+							</p>
+							<p class="entry-count">
+								{title.entryCount}
+							</p>
+						</li>
+					</a>
+				{/each}
+			{:else}
+				<p class="empty">Bugün girdisi olan başlık yok</p>
+			{/if}
+		{:else if trendTitles.length > 0}
 			{#each trendTitles as title}
 				<a href="/baslik/{title.name}">
 					<li class="title justify-between gap-05">
@@ -72,6 +76,8 @@
 					</li>
 				</a>
 			{/each}
+		{:else}
+			<p class="empty">Gündemde başlık yok</p>
 		{/if}
 	</ul>
 </div>
@@ -112,6 +118,12 @@
 				}
 			}
 		}
+	}
+
+	.empty {
+		font-style: italic;
+		font-size: 0.875rem;
+		color: $grey;
 	}
 
 	.hide {
