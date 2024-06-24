@@ -30,6 +30,7 @@ export async function load({ params, fetch }) {
 			error: 'İstek Hatası',
 			details: 'Girdi yüklenirken bir hata oluştu.'
 		};
+
 		return {
 			entry: null,
 			error
