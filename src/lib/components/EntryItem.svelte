@@ -4,7 +4,7 @@
 	import favorite from '$lib/images/icons/favorite.svg';
 	import unfavorite from '$lib/images/icons/unfavorite.svg';
 	import upvote from '$lib/images/icons/upvote.svg';
-	import { nicknameStore, tokenStore } from '$lib/stores/user';
+	import { tokenStore } from '$lib/stores/user';
 	import type { Entry } from '$lib/types';
 	import { fetchApi, formatDates } from '$lib/utils';
 
@@ -13,7 +13,7 @@
 
 	const dates = formatDates(entry.createdAt, entry.updatedAt);
 
-	$: isloggedIn = !!$nicknameStore;
+	$: isLoggedIn = $tokenStore !== null;
 
 	const handleFavorite = async () => {
 		const url = `${env.PUBLIC_API_URL}/entries/${entry.id}/favorite`;
@@ -39,7 +39,7 @@
 	<div class="content">
 		{entry.content}
 	</div>
-	{#if isloggedIn}
+	{#if isLoggedIn}
 		<div class="actions row gap-05">
 			<button class="upvote">
 				<img src={upvote} alt="Upvote" />

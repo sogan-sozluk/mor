@@ -4,7 +4,6 @@ import type { Entry, ErrorResponse, PaginationResponse } from '$lib/types';
 import { get } from 'svelte/store';
 
 export const prerender = false;
-export const csr = false;
 
 export async function load({ params, fetch, url }) {
 	try {
