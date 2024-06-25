@@ -4,8 +4,8 @@ import type { PaginationResponse, TitleExplorerItem } from '$lib/types';
 export const prerender = true;
 
 export async function load({ fetch }) {
-	const todayUrl = `${env.PUBLIC_API_URL}/today?page=0&perPage=20`;
-	const trendsUrl = `${env.PUBLIC_API_URL}/trends?page=0&perPage=20`;
+	const todayUrl = `${env.PUBLIC_API_URL}/today?page=1&perPage=20`;
+	const trendsUrl = `${env.PUBLIC_API_URL}/trends?page=1&perPage=20`;
 
 	const todayResponse = await fetch(todayUrl);
 	const trendsResponse = await fetch(trendsUrl);
