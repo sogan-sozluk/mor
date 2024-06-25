@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import EntryItem from '$lib/components/EntryItem.svelte';
 	import NewEntry from '$lib/components/NewEntry.svelte';
 	import Pager from '$lib/components/Pager.svelte';
@@ -6,6 +7,21 @@
 
 	export let data: TitleData;
 </script>
+
+<svelte:head>
+	<title>{data.title} - soğan sözlük</title>
+	{#if data.title}
+		<meta property="og:title" content="{data.title} - soğan sözlük" />
+		<meta property="og:description" content="{data.title} hakkında yazılanlar." />
+		<meta name="keywords" content={data.title} />
+		<meta name="description" content="{data.title} hakkında yazılanlar." />
+	{:else}
+		<meta property="og:title" content="soğan sözlük" />
+		<meta property="og:description" content="Özgürce yaz, özgürce oku." />
+		<meta name="description" content="Özgürce yaz, özgürce oku." />
+	{/if}
+	<meta property="og:url" content={$page.url.toString()} />
+</svelte:head>
 
 <div class="w-full col gap-1">
 	<a class="title" href="/baslik/{data.title}">{data.title}</a>

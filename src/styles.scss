@@ -72,11 +72,12 @@ button {
 	border-radius: 0.25rem;
 	background-color: $dark-purple-200;
 	border: 1px solid $light-grey;
-	color: $light-grey;
+	color: $light-purple;
 	cursor: pointer;
 
 	&:hover {
-		background-color: $light-purple;
+		background-color: $dark-purple-100;
+		color: $white;
 
 		&:disabled {
 			background-color: $grey;

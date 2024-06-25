@@ -13,8 +13,8 @@
 </script>
 
 <svelte:head>
-	<title>soğan sözlük</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>soğan sözlük - özgürce yaz, özgürce oku</title>
+	<meta name="description" content="Özgürce yaz, özgürce oku." />
 </svelte:head>
 
 <div class="app">
