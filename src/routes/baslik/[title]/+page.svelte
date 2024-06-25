@@ -1,13 +1,10 @@
 <script lang="ts">
-	import * as env from '$env/static/public';
 	import EntryItem from '$lib/components/EntryItem.svelte';
 	import NewEntry from '$lib/components/NewEntry.svelte';
 	import Pager from '$lib/components/Pager.svelte';
 	import type { TitleData } from './+page';
 
 	export let data: TitleData;
-
-	$: baseUrl = `${env.PUBLIC_API_URL}/titles/${data.title}/entries`;
 </script>
 
 <div class="w-full col gap-1">
@@ -19,7 +16,10 @@
 		<p class="text-sm text-gray-500">Henüz hiçbir girdi yok.</p>
 	{:else}
 		<div class="pager-wrapper">
-			<Pager {baseUrl} total={data.entries.total} bind:paginatedData={data.entries} />
+			<Pager
+				totalPage={Math.ceil(data.entries.total / data.entries.perPage)}
+				currentPage={data.entries.page}
+			/>
 		</div>
 		{#each data.entries.items as entry}
 			<EntryItem {entry} showTitle={false} />

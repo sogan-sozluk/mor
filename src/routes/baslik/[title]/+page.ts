@@ -7,8 +7,8 @@ export const prerender = false;
 
 export async function load({ params, fetch, url }) {
 	try {
-		const page = url.searchParams.get('page') || '0';
-		const perPage = url.searchParams.get('perPage') || '10';
+		const page = Number(url.searchParams.get('page') || 1);
+		const perPage = Number(url.searchParams.get('perPage') || 10);
 		const fetchUrl = `${env.PUBLIC_API_URL}/titles/${params.title}/entries?page=${page}&perPage=${perPage}`;
 
 		const token = get(tokenStore);
