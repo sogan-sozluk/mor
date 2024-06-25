@@ -1,20 +1,33 @@
 <script lang="ts">
 	import burgerIcon from '$lib/images/icons/dots.svg';
+	import { tokenStore } from '$lib/stores/user';
 
 	let isOpen = false;
 	let onClick = () => {
 		isOpen = !isOpen;
 	};
+
+	$: isLoggedIn = !!$tokenStore;
 </script>
 
-<div class="burger-menu">
+<div class="burger-menu" class:hidden={!isLoggedIn}>
 	<button class="center-items" on:click={onClick}>
 		<img src={burgerIcon} alt="logo" />
 	</button>
 	{#if isOpen}
 		<div class="menu col">
-			<a href="/cop-kovasi">çöp kovası</a>
-			<a href="/cikis-yap">çıkış yap</a>
+			<a
+				on:click={() => {
+					isOpen = false;
+				}}
+				href="/cop-kovasi">çöp kovası</a
+			>
+			<a
+				on:click={() => {
+					isOpen = false;
+				}}
+				href="/cikis-yap">çıkış yap</a
+			>
 		</div>
 	{/if}
 </div>
@@ -53,5 +66,9 @@
 		@media (max-width: 1686px) {
 			right: 1rem;
 		}
+	}
+
+	.hidden {
+		display: none;
 	}
 </style>
