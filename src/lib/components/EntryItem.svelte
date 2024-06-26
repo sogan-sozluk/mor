@@ -1,9 +1,11 @@
 <script lang="ts">
 	import * as env from '$env/static/public';
 	import downvote from '$lib/images/icons/downvote.svg';
+	import downvoted from '$lib/images/icons/downvoted.svg';
 	import favorite from '$lib/images/icons/favorite.svg';
 	import unfavorite from '$lib/images/icons/unfavorite.svg';
 	import upvote from '$lib/images/icons/upvote.svg';
+	import upvoted from '$lib/images/icons/upvoted.svg';
 	import { tokenStore } from '$lib/stores/user';
 	import type { Entry } from '$lib/types';
 	import { fetchApi, formatDates } from '$lib/utils';
@@ -30,6 +32,22 @@
 			entry.isFavorite = false;
 		}
 	};
+
+	const handleUnvote = async () => {
+		const url = `${env.PUBLIC_API_URL}/entries/${entry.id}/unvote`;
+		const res = await fetchApi(fetch, new URL(url), 'POST', $tokenStore);
+		if (res.ok) {
+			entry.vote = null;
+		}
+	};
+
+	const handleVote = async (vote: 'Up' | 'Down') => {
+		const url = `${env.PUBLIC_API_URL}/entries/${entry.id}/vote/${vote.toLowerCase()}`;
+		const res = await fetchApi(fetch, new URL(url), 'POST', $tokenStore);
+		if (res.ok) {
+			entry.vote = vote;
+		}
+	};
 </script>
 
 <div class="entry-item col gap-1 w-full">
@@ -41,12 +59,24 @@
 	</div>
 	{#if isLoggedIn}
 		<div class="actions row gap-05">
-			<button class="upvote">
-				<img src={upvote} alt="Upvote" />
-			</button>
-			<button class="downvote">
-				<img src={downvote} alt="Downvote" />
-			</button>
+			{#if entry.vote === 'Up'}
+				<button class="upvoted" on:click={handleUnvote}>
+					<img src={upvoted} alt="Upvoted" />
+				</button>
+			{:else}
+				<button class="upvote" on:click={() => handleVote('Up')}>
+					<img src={upvote} alt="Upvote" />
+				</button>
+			{/if}
+			{#if entry.vote === 'Down'}
+				<button class="downvoted" on:click={handleUnvote}>
+					<img src={downvoted} alt="Downvoted" />
+				</button>
+			{:else}
+				<button class="downvote" on:click={() => handleVote('Down')}>
+					<img src={downvote} alt="Downvote" />
+				</button>
+			{/if}
 			{#if entry.isFavorite}
 				<button class="unfavorite" on:click={handleUnfavorite}>
 					<img src={unfavorite} alt="Unfavorite" />

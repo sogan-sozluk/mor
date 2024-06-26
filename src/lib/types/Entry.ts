@@ -6,6 +6,7 @@ export type Entry = {
 	title: Title;
 	content: string;
 	author: Author;
+	vote: 'Up' | 'Down' | null;
 	isFavorite: boolean | null;
 	createdAt: string;
 	updatedAt: string;
