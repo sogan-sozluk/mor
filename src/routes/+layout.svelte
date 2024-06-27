@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { navigating } from '$app/stores';
+	import Footer from '$lib/components/Footer.svelte';
 	import LoadingSpinner from '$lib/components/LoadingSpinner.svelte';
 	import TitleExplorer from '$lib/components/TitleExplorer.svelte';
 	import type { TitleExplorerItem } from '$lib/types';
@@ -27,19 +28,22 @@
 			<slot />
 		{/if}
 	</main>
+	<Footer />
 </div>
 
 <style lang="scss">
 	.app {
 		display: flex;
+		min-height: 100vh;
 		flex-direction: column;
 		align-items: center;
 	}
 
 	main {
+		flex: 1 0 auto;
 		width: calc(100% - 2rem);
 		max-width: 90rem;
-		margin: 1rem 1rem 0 1rem;
+		margin: 1rem;
 	}
 
 	@media (max-width: 670px) {
