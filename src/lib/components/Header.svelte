@@ -27,6 +27,7 @@
 		border-bottom: 1px solid $light-grey;
 		background-color: $dark-purple-100;
 	}
+
 	.content {
 		margin: 0 1rem;
 		max-width: 90rem;
