@@ -10,4 +10,5 @@ export type Entry = {
 	isFavorite: boolean | null;
 	createdAt: string;
 	updatedAt: string;
+	deleteAt: string | null;
 };

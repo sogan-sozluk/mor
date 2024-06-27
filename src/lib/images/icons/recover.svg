@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="40.666901mm"
+   height="47.552715mm"
+   viewBox="0 0 40.666901 47.552715"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="0.80000001"
+       markerHeight="0.80000001"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid"
+       markerUnits="strokeWidth">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="m -2.75,3 3,-3 -3,-3"
+         id="path2" />
+    </marker>
+  </defs>
+  <g
+     id="layer1"
+     style="display:inline"
+     transform="translate(-319.62615,-496.4265)">
+    <path
+       style="font-variation-settings:'wght' 800;fill:none;fill-rule:evenodd;stroke:#e4e2de;stroke-width:3;stroke-linecap:round;stroke-linejoin:bevel;stroke-opacity:1;marker-end:url(#ArrowWideRounded)"
+       id="path33"
+       d="m 358.79305,523.64392 a 18.834772,18.834772 0 0 1 -13.84893,18.16288 18.834772,18.834772 0 0 1 -21.18096,-8.54692 18.834772,18.834772 0 0 1 2.63511,-22.68786 18.834772,18.834772 0 0 1 22.57606,-3.46471" />
+  </g>
+</svg>
