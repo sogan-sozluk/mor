@@ -1,5 +1,5 @@
 import * as env from '$env/static/public';
-import { tokenStore } from '$lib/stores/user.js';
+import { tokenStore } from '$lib/stores/user';
 import type { Entry, ErrorResponse, PaginationResponse } from '$lib/types';
 import { get } from 'svelte/store';
 

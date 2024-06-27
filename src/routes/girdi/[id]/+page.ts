@@ -4,7 +4,7 @@ import type { Entry, ErrorResponse } from '$lib/types';
 import { fetchApi } from '$lib/utils';
 import { get } from 'svelte/store';
 
-export const prerender = false;
+export const prerender = true;
 
 export async function load({ params, fetch }) {
 	const url = `${env.PUBLIC_API_URL}/entries/${params.id}`;
