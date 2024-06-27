@@ -39,6 +39,7 @@ export async function load({ params, fetch, url }) {
 			details: 'Girdiler yüklenirken bir hata oluştu.'
 		};
 
+		// TODO: Return typed data
 		return {
 			title: params.title,
 			entries: [],
