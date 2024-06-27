@@ -37,6 +37,8 @@
 	onMount(() => {
 		nickname = localStorage.getItem('nickname');
 	});
+
+	// TODO: Error handling
 </script>
 
 <div class="new-entry w-full col" class:hidden={nickname === null}>

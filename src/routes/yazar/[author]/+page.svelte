@@ -1,8 +1,11 @@
 <script lang="ts">
 	import EntryItem from '$lib/components/EntryItem.svelte';
+	import Pager from '$lib/components/Pager.svelte';
 	import type { AuthorData } from './+page';
 
 	export let data: AuthorData;
+
+	// TODO: Add title and meta tags
 </script>
 
 <div class="author w-full col">
@@ -17,6 +20,12 @@
 			{data.entries.total} girdi
 		</p>
 		<div class="entries col">
+			<div class="pager-wrapper">
+				<Pager
+					totalPage={Math.ceil(data.entries.total / data.entries.perPage)}
+					currentPage={data.entries.page}
+				/>
+			</div>
 			{#each data.entries.items as entry}
 				<EntryItem {entry} showTitle={true} />
 			{/each}
@@ -44,6 +53,12 @@
 		font-size: 0.875rem;
 		font-weight: 300;
 		font-style: italic;
+	}
+
+	.pager-wrapper {
+		display: flex;
+		max-width: 45rem;
+		justify-content: flex-end;
 	}
 
 	.entries {

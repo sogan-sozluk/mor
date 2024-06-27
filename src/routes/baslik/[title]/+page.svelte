@@ -50,6 +50,7 @@
 		max-width: 45rem;
 		justify-content: flex-end;
 	}
+
 	.title {
 		margin: 0;
 		color: $light-grey;
