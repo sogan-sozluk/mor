@@ -56,7 +56,7 @@
 		const url = `${env.PUBLIC_API_URL}/entries/${entry.id}/soft-delete`;
 		const res = await fetchApi(fetch, new URL(url), 'DELETE', $tokenStore);
 		if (res.ok) {
-			entry.deleteAt = new Date().toLocaleString();
+			entry.deletedAt = new Date().toLocaleString();
 		}
 	};
 
@@ -64,7 +64,7 @@
 		const url = `${env.PUBLIC_API_URL}/entries/${entry.id}/recover`;
 		const res = await fetchApi(fetch, new URL(url), 'PATCH', $tokenStore);
 		if (res.ok) {
-			entry.deleteAt = null;
+			entry.deletedAt = null;
 		}
 	};
 </script>
@@ -109,7 +109,7 @@
 			</div>
 			{#if isSelf}
 				<div class="priv row gap-05">
-					{#if entry.deleteAt}
+					{#if entry.deletedAt}
 						<button class="recover" on:click={handleRecover}>
 							<img src={recover} alt="kurtar" title="kurtar" />
 						</button>
