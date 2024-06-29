@@ -4,8 +4,8 @@
 	import LoadingSpinner from '$lib/components/LoadingSpinner.svelte';
 	import TitleExplorer from '$lib/components/TitleExplorer.svelte';
 	import type { TitleExplorerItem } from '$lib/types';
-	import Header from '../lib/components/Header.svelte';
-	import '../styles.scss';
+	import Header from '$lib/components/Header.svelte';
+	import '../../styles.scss';
 	import type { ExplorerData } from './+layout';
 
 	export let data: ExplorerData;
