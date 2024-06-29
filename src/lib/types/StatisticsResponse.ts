@@ -1,4 +1,4 @@
-export type ModerationMenuCounts = {
+export type StatisticsResponse = {
 	titleCount: number;
 	entryCount: number;
 	userCount: number;
