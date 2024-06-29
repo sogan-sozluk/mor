@@ -6,3 +6,4 @@ export * from './LoginResponse';
 export * from './PaginationResponse';
 export * from './SearchResult';
 export * from './TitleExplorerItem';
+export * from './UpdateEntryRequest';
