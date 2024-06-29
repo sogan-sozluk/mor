@@ -1,13 +1,15 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import * as env from '$env/static/public';
+	import bin from '$lib/images/icons/bin.svg';
 	import downvote from '$lib/images/icons/downvote.svg';
 	import downvoted from '$lib/images/icons/downvoted.svg';
+	import edit from '$lib/images/icons/edit.svg';
 	import favorite from '$lib/images/icons/favorite.svg';
+	import recover from '$lib/images/icons/recover.svg';
 	import unfavorite from '$lib/images/icons/unfavorite.svg';
 	import upvote from '$lib/images/icons/upvote.svg';
 	import upvoted from '$lib/images/icons/upvoted.svg';
-	import bin from '$lib/images/icons/bin.svg';
-	import recover from '$lib/images/icons/recover.svg';
 	import { nicknameStore, tokenStore } from '$lib/stores/user';
 	import type { Entry } from '$lib/types';
 	import { fetchApi, formatDates } from '$lib/utils';
@@ -82,6 +84,12 @@
 			entry = null;
 		}
 	};
+
+	const handleEdit = () => {
+		if (entry) {
+			goto(`/girdi/${entry.id}/duzenle`);
+		}
+	};
 </script>
 
 <div class="entry-item col gap-1 w-full">
@@ -133,6 +141,9 @@
 								<img src={bin} alt="sil" title="sil" />
 							</button>
 						{:else}
+							<button class="edit" on:click={handleEdit}>
+								<img src={edit} alt="düzenle" title="düzenle" />
+							</button>
 							<button class="delete" on:click={handleSoftDelete}>
 								<img src={bin} alt="çöpe at" title="çöpe at" />
 							</button>
