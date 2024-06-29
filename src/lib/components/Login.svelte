@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as env from '$env/static/public';
 	import type { ErrorResponse, LoginResponse } from '$lib/types';
-	import { nicknameStore } from '$lib/stores/user';
+	import { isAdminStore, isModeratorStore, nicknameStore, tokenStore } from '$lib/stores/user';
 
 	let nickname: string = '';
 	let password: string = '';
@@ -30,8 +30,10 @@
 
 			if (response.ok) {
 				const loginResponse: LoginResponse = await response.json();
-				localStorage.setItem('token', loginResponse.token);
 				nicknameStore.set(nickname);
+				tokenStore.set(loginResponse.token);
+				isAdminStore.set(loginResponse.isAdmin);
+				isModeratorStore.set(loginResponse.isModerator);
 				location.href = '/';
 			} else {
 				const errorResponse: ErrorResponse = await response.json();

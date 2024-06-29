@@ -1,6 +1,6 @@
 <script lang="ts">
 	import burgerIcon from '$lib/images/icons/dots.svg';
-	import { tokenStore } from '$lib/stores/user';
+	import { isModeratorStore, tokenStore } from '$lib/stores/user';
 
 	let isOpen = false;
 	let onClick = () => {
@@ -16,17 +16,25 @@
 	</button>
 	{#if isOpen}
 		<div class="menu col">
+			{#if $isModeratorStore}
+				<a
+					on:click={() => {
+						isOpen = false;
+					}}
+					href="/yonetim">Yönetim</a
+				>
+			{/if}
 			<a
 				on:click={() => {
 					isOpen = false;
 				}}
-				href="/cop-kovasi">çöp kovası</a
+				href="/cop-kovasi">Çöp kovası</a
 			>
 			<a
 				on:click={() => {
 					isOpen = false;
 				}}
-				href="/cikis-yap">çıkış yap</a
+				href="/cikis-yap">Çıkış yap</a
 			>
 		</div>
 	{/if}
