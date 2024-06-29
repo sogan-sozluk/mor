@@ -3,7 +3,7 @@ export * from './CreateEntryResponse';
 export * from './Entry';
 export * from './ErrorResponse';
 export * from './LoginResponse';
-export * from './ModerationMenuCounts';
+export * from './StatisticsResponse';
 export * from './PaginationResponse';
 export * from './SearchResult';
 export * from './TitleExplorerItem';

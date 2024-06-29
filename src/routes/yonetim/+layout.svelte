@@ -1,18 +1,13 @@
 <script lang="ts">
+	import '../../styles.scss';
 	import { navigating } from '$app/stores';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import LoadingSpinner from '$lib/components/LoadingSpinner.svelte';
 	import ModerationMenu from '$lib/components/ModerationMenu.svelte';
-	import type { ModerationMenuCounts } from '$lib/types';
-	import '../../styles.scss';
+	import type { ModeratorMenuData } from './+layout';
 
-	const counts: ModerationMenuCounts = {
-		titleCount: 2,
-		entryCount: 8,
-		userCount: 16,
-		crewCount: 32
-	};
+	export let data: ModeratorMenuData;
 </script>
 
 <svelte:head>
@@ -23,7 +18,12 @@
 <div class="app">
 	<Header />
 	<main class="row gap-1">
-		<ModerationMenu {counts} />
+		{#if data.error}
+			<p>{data.error.error}</p>
+			<p>{data.error.details}</p>
+		{:else if data.statistics}
+			<ModerationMenu statistics={data.statistics} />
+		{/if}
 		{#if $navigating}
 			<LoadingSpinner />
 		{:else}

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { ModerationMenuCounts } from '$lib/types';
+	import type { StatisticsResponse } from '$lib/types';
 
-	export let counts: ModerationMenuCounts;
+	export let statistics: StatisticsResponse;
 </script>
 
 <div class="moderation-menu col w-full">
@@ -9,25 +9,25 @@
 		<a href={'#'}>
 			<li class="title justify-between gap-05">
 				<p class="name">Başlıklar</p>
-				<p class="entry-count">{counts.titleCount}</p>
+				<p class="entry-count">{statistics.titleCount}</p>
 			</li>
 		</a>
 		<a href={'#'}>
 			<li class="title justify-between gap-05">
 				<p class="name">Girdiler</p>
-				<p class="entry-count">{counts.entryCount}</p>
+				<p class="entry-count">{statistics.entryCount}</p>
 			</li>
 		</a>
 		<a href={'#'}>
 			<li class="title justify-between gap-05">
 				<p class="name">Kullanıcılar</p>
-				<p class="entry-count">{counts.userCount}</p>
+				<p class="entry-count">{statistics.userCount}</p>
 			</li>
 		</a>
 		<a href={'#'}>
 			<li class="title justify-between gap-05">
 				<p class="name">Ekip</p>
-				<p class="entry-count">{counts.crewCount}</p>
+				<p class="entry-count">{statistics.crewCount}</p>
 			</li>
 		</a>
 	</ul>
