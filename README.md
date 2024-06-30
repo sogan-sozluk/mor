@@ -1,6 +1,8 @@
+# mor
+
 Frontend for `soğan sözlük` project.
 
-# Setting up the project
+## Setting up the project
 
 First, you need [arpacik](https://github.com/sogan-sozluk/arpacik) up and running.
 
